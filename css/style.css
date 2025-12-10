@@ -1,0 +1,289 @@
+/* Сброс и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #f0f8ff;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+}
+
+/* Карточка в стиле стекла */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+}
+
+/* Заголовки */
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #4df0d6; /* Мятный акцент */
+    text-shadow: 0 0 10px rgba(77, 240, 214, 0.3);
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffcc70; /* Жёлтый акцент */
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin: 25px 0 15px;
+    color: #9be8ff;
+    border-left: 5px solid #4df0d6;
+    padding-left: 15px;
+}
+
+/* Текст */
+p, li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+/* Навигация */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: rgba(77, 240, 214, 0.2);
+    border-color: #4df0d6;
+    transform: translateY(-2px);
+}
+
+.teacher-btn {
+    background: rgba(255, 204, 112, 0.2);
+    border-color: #ffcc70;
+}
+
+/* Кнопки действий */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 18px 36px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    min-width: 220px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4df0d6, #2bb8a6);
+    color: #0a2a24;
+    box-shadow: 0 5px 15px rgba(77, 240, 214, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(77, 240, 214, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid #ffcc70;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 204, 112, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Иконки миссий */
+.mission-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin: 20px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Блоки заданий */
+.task-block {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 6px solid;
+}
+
+.task-block.ru {
+    border-left-color: #4df0d6;
+}
+
+.task-block.math {
+    border-left-color: #ffcc70;
+}
+
+.task-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Список слов/примеров */
+.word-list, .example-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.word-item, .example-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Поле для ответа (опционально) */
+.answer-input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Кнопка печати */
+.print-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid #9be8ff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px;
+}
+
+.print-btn:hover {
+    background: rgba(155, 232, 255, 0.2);
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.hint {
+    font-style: italic;
+    margin-top: 10px;
+    color: #ffcc70;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .card { padding: 20px; }
+    
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-btn {
+        width: 90%;
+        text-align: center;
+    }
+    
+    .btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .word-list, .example-list {
+        grid-template-columns: 1fr;
+    }
+}

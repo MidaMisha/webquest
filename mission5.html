@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Миссия 5 — Алгебраический переулок | Город Слов и Чисел</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Оптимальные размеры для проектора */
+        .container {
+            max-width: 1400px;
+            padding: 25px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.2rem !important;
+            margin-bottom: 20px !important;
+            text-align: center;
+            color: #4df0d6;
+            text-shadow: 0 0 15px rgba(77, 240, 214, 0.4);
+        }
+        
+        h2 {
+            font-size: 2.8rem !important;
+            margin: 40px 0 25px !important;
+            color: #ffcc70;
+        }
+        
+        h3 {
+            font-size: 2.4rem !important;
+            margin: 30px 0 20px !important;
+            color: #9be8ff;
+            padding-left: 20px;
+            border-left: 6px solid #4df0d6;
+        }
+        
+        p, li {
+            font-size: 1.8rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: 15px !important;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mission-icon {
+            font-size: 6rem !important;
+            text-align: center;
+            margin: 30px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .task-block {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 6px solid;
+        }
+        
+        .task-block.math {
+            border-left-color: #4df0d6;
+        }
+        
+        .task-title {
+            font-size: 2.2rem !important;
+            margin-bottom: 20px !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4df0d6;
+        }
+        
+        .nav-btn {
+            font-size: 1.5rem !important;
+            padding: 15px 25px !important;
+            margin: 8px !important;
+            border-radius: 50px !important;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .nav-btn:hover, .nav-btn.active {
+            background: rgba(77, 240, 214, 0.2);
+            border-color: #4df0d6;
+            transform: translateY(-2px);
+        }
+        
+        .teacher-btn {
+            background: rgba(255, 204, 112, 0.2);
+            border-color: #ffcc70;
+        }
+        
+        .btn {
+            font-size: 1.8rem !important;
+            padding: 18px 35px !important;
+            border-radius: 50px !important;
+            min-width: 200px !important;
+            margin: 10px !important;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #4df0d6, #2bb8a6);
+            color: #0a2a24;
+            box-shadow: 0 5px 15px rgba(77, 240, 214, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(77, 240, 214, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid #ffcc70;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 204, 112, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .example-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .example-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            font-size: 2.2rem !important;
+            text-align: center;
+            font-weight: 600;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Courier New', monospace;
+            color: #9be8ff;
+        }
+        
+        .math-expression {
+            font-size: 2.5rem !important;
+            font-weight: 700;
+            color: #4df0d6;
+            text-align: center;
+            padding: 20px;
+            background: rgba(77, 240, 214, 0.1);
+            border-radius: 15px;
+            margin: 15px 0;
+            border: 2px solid rgba(77, 240, 214, 0.3);
+        }
+        
+        .answer-input {
+            width: 100%;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 1.8rem !important;
+            margin: 10px 0;
+            font-family: 'Nunito', sans-serif;
+            min-height: 150px;
+        }
+        
+        .quiz-question label {
+            font-size: 1.8rem !important;
+            padding: 15px 20px !important;
+            margin: 12px 0 !important;
+            display: block;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+        }
+        
+        input[type="radio"] {
+            transform: scale(1.5) !important;
+            margin-right: 20px !important;
+            margin-left: 8px !important;
+        }
+        
+        input[type="text"] {
+            font-size: 1.8rem !important;
+            padding: 18px 25px !important;
+            border-radius: 50px !important;
+            margin: 15px 0 !important;
+            min-width: 350px !important;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.5rem !important;
+            opacity: 0.8;
+        }
+        
+        .hint {
+            font-style: italic;
+            margin-top: 15px;
+            color: #ffcc70;
+            font-size: 1.6rem !important;
+            padding: 15px;
+            background: rgba(255, 204, 112, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid #ffcc70;
+        }
+        
+        .main-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .error-block {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid #ff6b6b;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .step-box {
+            background: rgba(155, 232, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #9be8ff;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #9be8ff;
+            color: #0a2a24;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        /* Для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
+            h3 { font-size: 1.8rem !important; }
+            p, li { font-size: 1.4rem !important; }
+            .btn { font-size: 1.4rem !important; padding: 15px 25px !important; }
+            .nav-btn { font-size: 1.2rem !important; padding: 12px 20px !important; }
+            .example-list { grid-template-columns: 1fr; }
+            .math-expression { font-size: 1.8rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>➕ Миссия 5: Алгебраический Переулок</h1>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Главная</a>
+                <a href="mission1.html" class="nav-btn">Миссия 1</a>
+                <a href="mission2.html" class="nav-btn">Миссия 2</a>
+                <a href="mission3.html" class="nav-btn">Миссия 3</a>
+                <a href="mission4.html" class="nav-btn">Миссия 4</a>
+                <a href="mission5.html" class="nav-btn active">Миссия 5</a>
+                <a href="mission6.html" class="nav-btn">Миссия 6</a>
+                <a href="mission7.html" class="nav-btn ">Миссия 7</a>
+                <a href="mission8.html" class="nav-btn">Миссия 8</a>
+                <a href="mission9.html" class="nav-btn">Миссия 9</a>
+                <a href="mission10.html" class="nav-btn">Миссия 10</a>
+            </nav>
+        </header>
+
+        <main class="card">
+            <div class="mission-icon">🧮</div>
+            
+            <div class="task-block" style="border-left-color: #9be8ff;">
+                <h3 class="task-title">🔐 Вход в Алгебраический Переулок</h3>
+                <p>Введите пароль, полученный в Миссии 4.</p>
+                
+                <div style="margin: 30px 0; padding: 30px; background: rgba(0,0,0,0.15); border-radius: 25px; text-align: center;">
+                    <input type="text" id="password-input-5" placeholder="Введите пароль из Библиотеки Сказок">
+                    <br>
+                    <button class="btn btn-primary" onclick="checkMissionPassword(5, 'БИБЛИОТЕКА')" style="margin-top: 25px;">
+                        🔑 Проверить пароль
+                    </button>
+                </div>
+                
+                <p id="password-message-5" style="text-align: center; font-size: 1.8rem; font-weight: 600; padding: 15px; min-height: 60px;"></p>
+            </div>
+
+            <section id="mission-content" style="display: none;">
+                <div class="task-block math">
+                    <h3 class="task-title">🏙️ Легенда переулка</h3>
+                    <p>
+                        На Алгебраическом переулке числа перепутали порядок действий.  
+                        Тебе нужно всё восстановить, разобраться в приоритетах операций
+                        и помочь жителям переулка правильно вычислять выражения!
+                    </p>
+                    <p class="hint">
+                        <strong>Напоминание:</strong> Сначала выполняются действия в скобках, 
+                        затем умножение и деление, и только потом — сложение и вычитание.
+                    </p>
+                </div>
+
+                <h2>Задание 1. Упорядочивание</h2>
+                <div class="task-block math">
+                    <div class="task-title">
+                        <span>📊 Вычисли выражения</span>
+                    </div>
+                    <p>Вычисли выражения, соблюдая правильный порядок действий:</p>
+                    
+                    <div class="example-list">
+                        <div class="example-item">
+                            8 + 4 · 5
+                        </div>
+                        <div class="example-item">
+                            (36 – 12) ÷ 4
+                        </div>
+                        <div class="example-item">
+                            7 · 7 – 18
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; padding: 30px; background: rgba(0,0,0,0.2); border-radius: 20px;">
+                        <h4 style="color: #9be8ff; margin-bottom: 20px;">📝 Запиши решения и ответы</h4>
+                        
+                        <div class="step-box">
+                            <div class="step-number">1</div>
+                            <span style="font-weight: 600; color: #4df0d6;">8 + 4 · 5 =</span>
+                            <textarea placeholder="Покажи все шаги решения..." 
+                                      style="width: 100%; margin-top: 10px; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid #4df0d6; color: white; font-size: 1.6rem; min-height: 80px;"></textarea>
+                        </div>
+                        
+                        <div class="step-box">
+                            <div class="step-number">2</div>
+                            <span style="font-weight: 600; color: #ffcc70;">(36 – 12) ÷ 4 =</span>
+                            <textarea placeholder="Покажи все шаги решения..." 
+                                      style="width: 100%; margin-top: 10px; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid #ffcc70; color: white; font-size: 1.6rem; min-height: 80px;"></textarea>
+                        </div>
+                        
+                        <div class="step-box">
+                            <div class="step-number">3</div>
+                            <span style="font-weight: 600; color: #9be8ff;">7 · 7 – 18 =</span>
+                            <textarea placeholder="Покажи все шаги решения..." 
+                                      style="width: 100%; margin-top: 10px; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid #9be8ff; color: white; font-size: 1.6rem; min-height: 80px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Задание 2. Ошибки ученика</h2>
+                <div class="task-block math">
+                    <div class="task-title">
+                        <span>🔍 Найди и исправь ошибки</span>
+                    </div>
+                    <p>Ученик вычислил выражения с ошибками:</p>
+                    
+                    <div class="error-block">
+                        <div class="math-expression">
+                            1) 8 + 4 · 5 = (8 + 4) · 5 = 60
+                        </div>
+                        <div class="math-expression">
+                            2) (36 – 12) ÷ 4 = 36 – (12 ÷ 4) = 33
+                        </div>
+                    </div>
+                    
+                    <p><strong>Задача:</strong> Найди ошибки и объясни, в чём ученик ошибся.</p>
+                    
+                    <div style="margin-top: 30px; padding: 25px; background: rgba(255, 107, 107, 0.05); border-radius: 20px; border: 2px dashed #ff6b6b;">
+                        <h4 style="color: #ff6b6b; margin-bottom: 15px;">✍️ Объясни каждую ошибку</h4>
+                        
+                        <div style="margin: 20px 0;">
+                            <p style="color: #ffcc70; font-weight: 600;">Ошибка 1: 8 + 4 · 5 = (8 + 4) · 5 = 60</p>
+                            <textarea class="answer-input" rows="3" placeholder="В чём ошибка? Какое правило нарушено?"></textarea>
+                        </div>
+                        
+                        <div style="margin: 20px 0;">
+                            <p style="color: #ffcc70; font-weight: 600;">Ошибка 2: (36 – 12) ÷ 4 = 36 – (12 ÷ 4) = 33</p>
+                            <textarea class="answer-input" rows="3" placeholder="В чём ошибка? Какое правило нарушено?"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 25px; background: rgba(77, 240, 214, 0.1); border-radius: 20px; border: 2px dashed #4df0d6;">
+                        <h4 style="color: #4df0d6; margin-bottom: 15px;">✅ Запиши правильные решения</h4>
+                        
+                        <div class="math-expression">
+                            Правильно: 8 + 4 · 5 = 
+                            <input type="text" placeholder="ответ" style="width: 100px; padding: 10px; margin: 0 10px; text-align: center; background: rgba(255,255,255,0.1); border: 2px solid #4df0d6; color: white; font-size: 1.8rem; border-radius: 5px;">
+                        </div>
+                        
+                        <div class="math-expression">
+                            Правильно: (36 – 12) ÷ 4 = 
+                            <input type="text" placeholder="ответ" style="width: 100px; padding: 10px; margin: 0 10px; text-align: center; background: rgba(255,255,255,0.1); border: 2px solid #4df0d6; color: white; font-size: 1.8rem; border-radius: 5px;">
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Мини-тест</h2>
+                <div class="task-block" style="border-left-color: #ffcc70;">
+                    <div class="task-title">
+                        <span>📝 Проверь знание порядка действий</span>
+                    </div>
+                    
+                    <form class="quiz-form" data-mission="5">
+                        <div style="margin: 30px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">
+                                <strong style="font-size: 2.2rem;">1.</strong> Чему равно 8 + 4 · 5?
+                            </p>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q1" value="a" style="margin-right: 20px; transform: scale(1.5);"> 
+                                60
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q1" value="b" style="margin-right: 20px; transform: scale(1.5);"> 
+                                28
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q1" value="c" style="margin-right: 20px; transform: scale(1.5);"> 
+                                40
+                            </label>
+                        </div>
+
+                        <div style="margin: 30px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">
+                                <strong style="font-size: 2.2rem;">2.</strong> Какая операция выполняется первой в выражении без скобок?
+                            </p>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q2" value="a" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Сложение
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q2" value="b" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Вычитание
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q2" value="c" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Умножение и деление
+                            </label>
+                        </div>
+
+                        <div style="margin: 30px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">
+                                <strong style="font-size: 2.2rem;">3.</strong> Чему равно (36 – 12) ÷ 4?
+                            </p>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q3" value="a" style="margin-right: 20px; transform: scale(1.5);"> 
+                                6
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q3" value="b" style="margin-right: 20px; transform: scale(1.5);"> 
+                                3
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m5q3" value="c" style="margin-right: 20px; transform: scale(1.5);"> 
+                                24
+                            </label>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="button" class="btn btn-primary" onclick="submitMissionTest(5)" style="font-size: 1.8rem; padding: 20px 40px;">
+                                ✅ Проверить ответы
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="window.print()" style="font-size: 1.8rem; padding: 20px 40px;">
+                                🖨️ Распечатать задание
+                            </button>
+                        </div>
+                        
+                        <p id="quiz-result-5" style="margin-top: 30px; padding: 25px; border-radius: 20px; text-align: center; font-weight: 700; font-size: 2rem; background: rgba(255,255,255,0.05);"></p>
+                    </form>
+
+                    <div id="mission-password-5" hidden
+                         style="margin-top: 40px; padding: 35px; background: linear-gradient(135deg, rgba(77, 240, 214, 0.1), rgba(45, 180, 160, 0.1)); border-radius: 25px; text-align: center; border: 3px dashed #4df0d6;">
+                        <h3 style="color: #4df0d6; font-size: 2.8rem; margin-bottom: 20px;">🎉 Миссия выполнена!</h3>
+                        <p style="font-size: 2rem; margin: 20px 0;">
+                            Запомни <strong>пароль к следующей миссии</strong>:
+                        </p>
+                        <div style="font-size: 4rem; font-weight: 800; color: #ffcc70; text-shadow: 0 0 15px rgba(255, 204, 112, 0.5); margin: 30px 0; padding: 30px; background: rgba(0,0,0,0.2); border-radius: 25px; letter-spacing: 8px;">
+                            ТРАМВАЙ
+                        </div>
+                        <p style="font-size: 1.6rem; opacity: 0.9;">
+                            Он понадобится тебе, чтобы пройти дальше по Городу Слов и Чисел.
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 50px; text-align: center;">
+                        <a href="mission6.html" class="btn btn-secondary" style="font-size: 1.8rem; padding: 20px 40px;">
+                            🚀 Перейти к Миссии 6
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Город Слов и Чисел • Миссия 5: Алгебраический Переулок</p>
+            <p style="opacity: 0.7; margin-top: 15px; font-size: 1.5rem;">Версия 1.0 • © 2024</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function checkMissionPassword(missionNumber, correctPassword) {
+            const input = document.getElementById(`password-input-${missionNumber}`);
+            const message = document.getElementById(`password-message-${missionNumber}`);
+            const missionContent = document.getElementById('mission-content');
+            
+            if (input.value.trim().toUpperCase() === correctPassword) {
+                message.innerHTML = '✅ Пароль верный! Добро пожаловать в Алгебраический Переулок!';
+                message.style.color = '#4df0d6';
+                
+                // Показать контент миссии
+                missionContent.style.display = 'block';
+                missionContent.style.opacity = '0';
+                missionContent.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    missionContent.style.opacity = '1';
+                }, 100);
+            } else {
+                message.innerHTML = '❌ Неверный пароль. Попробуй ещё раз!';
+                message.style.color = '#ff6b6b';
+            }
+        }
+    </script>
+</body>
+</html>

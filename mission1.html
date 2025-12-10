@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Миссия 1: Улица Слов | Город Слов и Чисел</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <style>
+        /* Дополнительные стили для проектора */
+        .container {
+            max-width: 1400px;
+            padding: 30px;
+        }
+        
+        h1 {
+            font-size: 3.5rem !important;
+            margin-bottom: 30px !important;
+            text-shadow: 0 0 20px rgba(77, 240, 214, 0.4) !important;
+        }
+        
+        h2 {
+            font-size: 3rem !important;
+            margin-bottom: 40px !important;
+            margin-top: 50px !important;
+        }
+        
+        h3 {
+            font-size: 2.5rem !important;
+            padding-left: 25px !important;
+            border-left-width: 8px !important;
+            margin: 40px 0 25px !important;
+        }
+        
+        h4 {
+            font-size: 2.2rem !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .mission-icon {
+            font-size: 8rem !important;
+            margin: 40px 0 !important;
+        }
+        
+        .card {
+            padding: 50px !important;
+            margin: 30px 0 !important;
+            border-radius: 35px !important;
+        }
+        
+        .task-block {
+            padding: 40px !important;
+            margin: 50px 0 !important;
+            border-radius: 30px !important;
+        }
+        
+        .task-title {
+            font-size: 2.5rem !important;
+            margin-bottom: 30px !important;
+        }
+        
+        p, li {
+            font-size: 2rem !important;
+            line-height: 1.8 !important;
+            margin-bottom: 25px !important;
+        }
+        
+        .hint {
+            font-size: 1.7rem !important;
+            margin-top: 20px !important;
+        }
+        
+        .nav-btn {
+            font-size: 1.5rem !important;
+            padding: 20px 35px !important;
+            margin: 10px !important;
+            border-radius: 60px !important;
+        }
+        
+        .btn {
+            font-size: 2.3rem !important;
+            padding: 25px 50px !important;
+            border-radius: 70px !important;
+            min-width: 300px !important;
+            margin: 15px !important;
+        }
+        
+        .btn-inline {
+            font-size: 2rem !important;
+            padding: 20px 40px !important;
+            border-radius: 60px !important;
+        }
+        
+        .word-item, .example-item {
+            font-size: 2.1rem !important;
+            padding: 25px !important;
+            border-radius: 20px !important;
+            min-height: 120px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .word-list, .example-list {
+            gap: 25px !important;
+            margin: 40px 0 !important;
+        }
+        
+        .answer-input {
+            font-size: 2.2rem !important;
+            padding: 25px !important;
+            border-radius: 20px !important;
+            margin: 30px 0 !important;
+            min-height: 200px !important;
+        }
+        
+        .quiz-question label {
+            font-size: 2.2rem !important;
+            padding: 20px 25px !important;
+            margin: 15px 0 !important;
+        }
+        
+        input[type="radio"] {
+            transform: scale(2) !important;
+            margin-right: 25px !important;
+            margin-left: 10px !important;
+        }
+        
+        .progress-label {
+            font-size: 2.2rem !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .progress-bar {
+            height: 30px !important;
+            border-radius: 15px !important;
+        }
+        
+        .progress-bar-inner {
+            height: 30px !important;
+        }
+        
+        .footer {
+            font-size: 1.8rem !important;
+            margin-top: 60px !important;
+            padding-top: 40px !important;
+        }
+        
+        .mission-password div {
+            font-size: 5rem !important;
+            margin: 40px 0 !important;
+            padding: 30px !important;
+        }
+        
+        .main-nav {
+            gap: 20px !important;
+            margin-top: 40px !important;
+            margin-bottom: 30px !important;
+        }
+        
+        /* Увеличим отступы для лучшей читаемости */
+        .mission-section {
+            margin-bottom: 70px !important;
+        }
+        
+        /* Для мобильных устройств оставим стандартные размеры */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem !important; }
+            h2 { font-size: 2.8rem !important; }
+            h3 { font-size: 2.3rem !important; }
+            p, li { font-size: 1.8rem !important; }
+            .btn { font-size: 1.8rem !important; padding: 20px 30px !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📚 Миссия 1: Улица Слов</h1>
+             <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Главная</a>
+                <a href="mission1.html" class="nav-btn active">Миссия 1</a>
+                <a href="mission2.html" class="nav-btn">Миссия 2</a>
+                <a href="mission3.html" class="nav-btn">Миссия 3</a>
+                <a href="mission4.html" class="nav-btn">Миссия 4</a>
+                <a href="mission5.html" class="nav-btn">Миссия 5</a>
+                <a href="mission6.html" class="nav-btn">Миссия 6</a>
+                <a href="mission7.html" class="nav-btn active">Миссия 7</a>
+                <a href="mission8.html" class="nav-btn">Миссия 8</a>
+                <a href="mission9.html" class="nav-btn">Миссия 9</a>
+                <a href="mission10.html" class="nav-btn">Миссия 10</a>
+            </nav>
+        </header>
+
+        <main class="card">
+            <div class="mission-icon">🔠</div>
+            
+            <div class="progress-panel task-block">
+                <h3 class="task-title">Ваш прогресс в городе</h3>
+                <div class="progress-label">
+                    Твой прогресс в «Городе Слов и Чисел»: <strong id="progress-text">0 из 10 миссий</strong>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" id="progress-bar-inner" style="width: 10%;"></div>
+                </div>
+                <p class="hint">Каждая выполненная миссия приближает тебя к полному освоению города!</p>
+            </div>
+
+            <section class="mission-section">
+                <h2>Легенда миссии</h2>
+                <div class="task-block ru">
+                    <div class="task-title">
+                        <span>🏘️ История улицы</span>
+                    </div>
+                    <p>
+                        На Улице Слов стоят дома–предложения. Но жители перепутали слова, потеряли части речи
+                        и теперь фразы звучат странно. Твоя задача — помочь городу восстановить порядок,
+                        чтобы каждое предложение стало грамотным и красивым.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mission-section">
+                <h2>Задание 1. Собери предложения</h2>
+                <div class="task-block ru">
+                    <div class="task-title">
+                        <span>🧩 Вариант 5–6 класс</span>
+                    </div>
+                    <p><strong>Задача:</strong> Из набора слов составь правильные предложения, запиши в тетрадь:</p>
+                    
+                    <div class="word-list">
+                        <div class="word-item">сочинять</div>
+                        <div class="word-item">любит</div>
+                        <div class="word-item">интересные</div>
+                        <div class="word-item">рассказы</div>
+                        <div class="word-item">Аня</div>
+                    </div>
+                    
+                    <div class="word-list">
+                        <div class="word-item">утром</div>
+                        <div class="word-item">школьники</div>
+                        <div class="word-item">в</div>
+                        <div class="word-item">пришли</div>
+                        <div class="word-item">библиотеку</div>
+                    </div>
+                    
+                    <div class="word-list">
+                        <div class="word-item">по</div>
+                        <div class="word-item">вечернему</div>
+                        <div class="word-item">тихому</div>
+                        <div class="word-item">гуляли</div>
+                        <div class="word-item">парку</div>
+                        <div class="word-item">мы</div>
+                    </div>
+                    
+                    <p class="hint">
+                        <strong>Дополнительное задание:</strong> Подпиши над каждым словом его часть речи 
+                        (существительное, прилагательное, глагол, наречие, местоимение).
+                    </p>
+                    
+                    <button type="button" class="btn-inline hint-btn" data-hint-target="m1-hint-1" 
+                            style="background: rgba(77, 240, 214, 0.1); color: #4df0d6; border: 2px solid #4df0d6; padding: 25px 40px; border-radius: 70px; cursor: pointer; margin-top: 30px; font-size: 2.2rem; font-weight: 700;">
+                        🔍 Показать подсказку
+                    </button>
+                    <div class="hint-text" id="m1-hint-1" hidden style="margin-top: 30px; padding: 30px; background: rgba(255, 204, 112, 0.1); border-radius: 25px; border-left: 6px solid #ffcc70; font-size: 2rem;">
+                        <strong>Совет от жителя улицы:</strong> Подумай, какое слово может быть подлежащим (кто? что?), 
+                        какое — сказуемым (что делает?), а остальные — уточняют, какие? когда? где? 
+                        В русском предложении обычно сначала подлежащее, потом сказуемое и дополнения.
+                    </div>
+                </div>
+            </section>
+
+            <section class="mission-section">
+                <h2>Задание 2. Найди лишнее слово</h2>
+                <div class="task-block ru">
+                    <div class="task-title">
+                        <span>🔎 Исправь ошибки</span>
+                    </div>
+                    <p>
+                        В каждом предложении есть одно лишнее слово. Найди его и перепиши предложение без ошибки.
+                    </p>
+                    
+                    <div class="example-list">
+                        <div class="example-item">
+                            <strong style="font-size: 2.8rem;">1.</strong> Вечером тёмным зажглись яркие звёздные звёзды на небе.
+                        </div>
+                        <div class="example-item">
+                            <strong style="font-size: 2.8rem;">2.</strong> Маленький щенок весело радостно играл с новым мячом.
+                        </div>
+                        <div class="example-item">
+                            <strong style="font-size: 2.8rem;">3.</strong> Ребята внимательно слушали интересный, увлекательный рассказ учителя внимательно.
+                        </div>
+                    </div>
+                    
+                    <p class="hint">
+                        <strong>Задание для внимательных:</strong> Подчеркни все однородные члены предложения в исправленных вариантах.
+                    </p>
+                    
+                    <div style="margin-top: 50px; padding: 40px; background: rgba(0,0,0,0.2); border-radius: 25px;">
+                        <h4 style="color: #9be8ff; margin-bottom: 30px;">📝 Поле для ответов</h4>
+                        <textarea class="answer-input" rows="6" placeholder="Запиши здесь исправленные предложения..." 
+                                  style="width: 100%; font-size: 2.2rem; padding: 30px; min-height: 300px;"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mission-section">
+                <h2>Мини-тест по миссии</h2>
+                <div class="task-block" style="border-left-color: #9be8ff;">
+                    <div class="task-title">
+                        <span>🧠 Проверь свои знания</span>
+                    </div>
+                    <p>Ответь на вопросы, чтобы подтвердить, что ты действительно разобрался(лась) с Улицей Слов.</p>
+
+                    <form class="quiz-form" data-mission="1">
+                        <div class="quiz-question" data-name="m1q1" data-correct="b" 
+                             style="margin: 40px 0; padding: 40px; background: rgba(255,255,255,0.05); border-radius: 25px;">
+                            <p style="font-size: 2.5rem; font-weight: 700; margin-bottom: 30px;">
+                                <strong style="font-size: 2.8rem;">1.</strong> Что такое подлежащее?
+                            </p>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q1" value="a" style="margin-right: 30px; transform: scale(2);"> 
+                                Слово, которое обозначает действие.
+                            </label>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q1" value="b" style="margin-right: 30px; transform: scale(2);"> 
+                                Главный член предложения, который называет того, о ком или о чём говорится.
+                            </label>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q1" value="c" style="margin-right: 30px; transform: scale(2);"> 
+                                Слово, отвечающее на вопрос «какой? какая? какое?».
+                            </label>
+                        </div>
+
+                        <div class="quiz-question" data-name="m1q2" data-correct="c"
+                             style="margin: 40px 0; padding: 40px; background: rgba(255,255,255,0.05); border-radius: 25px;">
+                            <p style="font-size: 2.5rem; font-weight: 700; margin-bottom: 30px;">
+                                <strong style="font-size: 2.8rem;">2.</strong> В каком ряду приведены только части речи?
+                            </p>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q2" value="a" style="margin-right: 30px; transform: scale(2);"> 
+                                Слово, предложение, текст.
+                            </label>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q2" value="b" style="margin-right: 30px; transform: scale(2);"> 
+                                Существительное, буква, звук.
+                            </label>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q2" value="c" style="margin-right: 30px; transform: scale(2);"> 
+                                Существительное, прилагательное, глагол.
+                            </label>
+                        </div>
+
+                        <div class="quiz-question" data-name="m1q3" data-correct="a"
+                             style="margin: 40px 0; padding: 40px; background: rgba(255,255,255,0.05); border-radius: 25px;">
+                            <p style="font-size: 2.5rem; font-weight: 700; margin-bottom: 30px;">
+                                <strong style="font-size: 2.8rem;">3.</strong> Какие слова являются однородными членами предложения?
+                            </p>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q3" value="a" style="margin-right: 30px; transform: scale(2);"> 
+                                Слова, относящиеся к одному и тому же члену предложения и отвечающие на один и тот же вопрос.
+                            </label>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q3" value="b" style="margin-right: 30px; transform: scale(2);"> 
+                                Любые слова в предложении.
+                            </label>
+                            <label style="display: block; margin: 20px 0; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 20px; font-size: 2.2rem;">
+                                <input type="radio" name="m1q3" value="c" style="margin-right: 30px; transform: scale(2);"> 
+                                Только прилагательные.
+                            </label>
+                        </div>
+
+                        <div class="action-buttons" style="margin-top: 60px;">
+                            <button type="button" class="btn btn-primary" onclick="submitMissionTest(1)" style="font-size: 2.5rem; padding: 30px 60px;">
+                                ✅ Проверить ответы
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="window.print()" style="font-size: 2.5rem; padding: 30px 60px;">
+                                🖨️ Распечатать задание
+                            </button>
+                        </div>
+                        
+                        <p id="quiz-result-1" class="quiz-result" 
+                           style="margin-top: 40px; padding: 30px; border-radius: 25px; text-align: center; font-weight: 700; font-size: 2.5rem; background: rgba(255,255,255,0.05);"></p>
+                    </form>
+
+                    <div class="mission-password" id="mission-password-1" hidden
+                         style="margin-top: 60px; padding: 50px; background: linear-gradient(135deg, rgba(77,240,214,0.1), rgba(45,180,160,0.1)); border-radius: 35px; text-align: center; border: 3px dashed #4df0d6;">
+                        <h3 style="color: #4df0d6; font-size: 3.5rem; margin-bottom: 30px;">🎉 Миссия выполнена!</h3>
+                        <p style="font-size: 2.5rem; margin: 25px 0;">
+                            Запомни <strong>пароль к следующей миссии</strong>:
+                        </p>
+                        <div style="font-size: 6rem; font-weight: 800; color: #ffcc70; text-shadow: 0 0 20px rgba(255,204,112,0.6); margin: 40px 0; padding: 40px; background: rgba(0,0,0,0.2); border-radius: 30px; letter-spacing: 10px;">
+                            МОСТ
+                        </div>
+                        <p style="font-size: 2rem; opacity: 0.9;">
+                            Он понадобится тебе, чтобы пройти дальше по Городу Слов и Чисел.
+                        </p>
+                    </div>
+
+                    <div class="mission-nav-next" style="margin-top: 70px; text-align: center;">
+                        <a href="mission2.html" class="btn btn-secondary" style="font-size: 2.5rem; padding: 30px 60px;">
+                            🚀 Перейти к Миссии 2
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Город Слов и Чисел • Миссия 1: Улица Слов</p>
+            <p style="opacity: 0.7; margin-top: 20px; font-size: 2rem;">Версия 1.0 • © 2024</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

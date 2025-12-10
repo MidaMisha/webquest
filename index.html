@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Город Слов и Чисел — Главная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>🏙️ Город Слов и Чисел</h1>
+
+        <nav class="main-nav">
+            <a href="index.html" class="nav-btn active">Главная</a>
+            <a href="mission1.html" class="nav-btn">Миссия 1</a>
+            <a href="mission2.html" class="nav-btn">Миссия 2</a>
+            <a href="mission3.html" class="nav-btn">Миссия 3</a>
+            <a href="mission4.html" class="nav-btn">Миссия 4</a>
+            <a href="mission5.html" class="nav-btn">Миссия 5</a>
+            <a href="mission6.html" class="nav-btn">Миссия 6</a>
+            <a href="mission7.html" class="nav-btn">Миссия 7</a>
+            <a href="mission8.html" class="nav-btn">Миссия 8</a>
+            <a href="mission9.html" class="nav-btn">Миссия 9</a>
+            <a href="mission10.html" class="nav-btn">Миссия 10</a>
+        </nav>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO BLOCK -->
+        <section class="card mission-section">
+            <div class="mission-icon" style="font-size: 8rem;">🌟</div>
+
+            <h2>Добро пожаловать в Город Слов и Чисел!</h2>
+            <p style="font-size: 2rem; margin-top: 20px;">
+                Тебя ждут увлекательные улицы русского языка, площади математики,
+                станции логики, парки статистики и тайные уголки шифров.  
+                Выполняй миссии, открывай новые территории и продвигайся к званию  
+                <strong>Хранителя Знаний</strong>!
+            </p>
+        </section>
+
+
+        <!-- PROGRESS PANEL -->
+        <section class="task-block mission-section">
+            <h3 class="task-title">📈 Твой прогресс</h3>
+            <p id="progress-text" class="progress-label">0 из 10 миссий (0%)</p>
+
+            <div class="progress-bar">
+                <div id="progress-bar-inner" class="progress-bar-inner" style="width: 0%;"></div>
+            </div>
+
+            <p class="hint" style="margin-top: 20px;">
+                Миссии можно проходить в любом порядке,  
+                но некоторые требуют пароль из предыдущих миссий.
+            </p>
+        </section>
+
+
+        <!-- TEAM NAME -->
+        <section class="task-block mission-section">
+            <h3 class="task-title">👥 Название команды</h3>
+            <p>Введите название своей команды или группы (необязательно):</p>
+
+            <input id="team-name" type="text" class="answer-input" placeholder="Например: Летописцы №7">
+
+            <button class="btn btn-primary" style="margin-top: 20px;" onclick="saveTeamInfo()">
+                💾 Сохранить имя команды
+            </button>
+
+            <p class="hint" style="margin-top: 20px;">
+                Имя команды будет отображаться на всех миссиях.
+            </p>
+        </section>
+
+
+        <!-- MISSIONS LIST -->
+        <section class="mission-section">
+            <h2>🧭 Выбери миссию для начала</h2>
+
+            <div class="mission-list">
+
+                <a href="mission1.html" class="mission-card card">
+                    <h3>Миссия 1</h3>
+                    <p>🔠 Улица Слов</p>
+                </a>
+
+                <a href="mission2.html" class="mission-card card">
+                    <h3>Миссия 2</h3>
+                    <p>➕ Алгебраическая площадь</p>
+                </a>
+
+                <a href="mission3.html" class="mission-card card">
+                    <h3>Миссия 3</h3>
+                    <p>🔍 Театральная улица</p>
+                </a>
+
+                <a href="mission4.html" class="mission-card card">
+                    <h3>Миссия 4</h3>
+                    <p>📚 Библиотека Сказок</p>
+                </a>
+
+                <a href="mission5.html" class="mission-card card">
+                    <h3>Миссия 5</h3>
+                    <p>➗ Алгебраический переулок</p>
+                </a>
+
+                <a href="mission6.html" class="mission-card card">
+                    <h3>Миссия 6</h3>
+                    <p>📊 Парк Статистики</p>
+                </a>
+
+                <a href="mission7.html" class="mission-card card">
+                    <h3>Миссия 7</h3>
+                    <p>📝 Редакция объявлений</p>
+                </a>
+
+                <a href="mission8.html" class="mission-card card">
+                    <h3>Миссия 8</h3>
+                    <p>🚇 Математическое метро</p>
+                </a>
+
+                <a href="mission9.html" class="mission-card card">
+                    <h3>Миссия 9</h3>
+                    <p>🔐 Тайный кодекс</p>
+                </a>
+
+                <a href="mission10.html" class="mission-card card">
+                    <h3>Миссия 10</h3>
+                    <p>🏛 Финальная ратуша</p>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Город Слов и Чисел • Главная страница</p>
+        <p style="opacity: .7; margin-top: 10px;">Версия 1.0 • © 2024</p>
+    </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

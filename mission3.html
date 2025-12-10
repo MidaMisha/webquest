@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Миссия 3: Мост Логики | Город Слов и Чисел</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <style>
+        /* Оптимальные размеры для проектора */
+        .container {
+            max-width: 1400px;
+            padding: 25px;
+        }
+        
+        h1 {
+            font-size: 3.2rem !important;
+            margin-bottom: 20px !important;
+            text-shadow: 0 0 15px rgba(155, 232, 255, 0.4) !important;
+        }
+        
+        h2 {
+            font-size: 2.8rem !important;
+            margin-bottom: 25px !important;
+            margin-top: 40px !important;
+        }
+        
+        h3 {
+            font-size: 2.4rem !important;
+            padding-left: 20px !important;
+            border-left-width: 6px !important;
+            margin: 30px 0 20px !important;
+        }
+        
+        h4 {
+            font-size: 2rem !important;
+            margin-bottom: 15px !important;
+        }
+        
+        .mission-icon {
+            font-size: 6rem !important;
+            margin: 30px 0 !important;
+        }
+        
+        .card {
+            padding: 40px !important;
+            margin: 20px 0 !important;
+            border-radius: 30px !important;
+        }
+        
+        .task-block {
+            padding: 30px !important;
+            margin: 40px 0 !important;
+            border-radius: 25px !important;
+            border-left: 6px solid !important;
+        }
+        
+        .task-title {
+            font-size: 2.2rem !important;
+            margin-bottom: 20px !important;
+        }
+        
+        p, li {
+            font-size: 1.8rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: 15px !important;
+        }
+        
+        .hint {
+            font-size: 1.6rem !important;
+            margin-top: 15px !important;
+        }
+        
+        .nav-btn {
+            font-size: 1.5rem !important;
+            padding: 15px 25px !important;
+            margin: 8px !important;
+            border-radius: 50px !important;
+        }
+        
+        .btn {
+            font-size: 1.8rem !important;
+            padding: 18px 35px !important;
+            border-radius: 50px !important;
+            min-width: 250px !important;
+            margin: 10px !important;
+        }
+        
+        .btn-inline {
+            font-size: 1.6rem !important;
+            padding: 15px 30px !important;
+            border-radius: 50px !important;
+        }
+        
+        .example-item {
+            font-size: 1.8rem !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            min-height: 80px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .example-list {
+            gap: 20px !important;
+            margin: 30px 0 !important;
+        }
+        
+        .answer-input {
+            font-size: 1.8rem !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            margin: 20px 0 !important;
+            min-height: 150px !important;
+        }
+        
+        .quiz-question label {
+            font-size: 1.8rem !important;
+            padding: 15px 20px !important;
+            margin: 12px 0 !important;
+        }
+        
+        input[type="radio"] {
+            transform: scale(1.5) !important;
+            margin-right: 20px !important;
+            margin-left: 8px !important;
+        }
+        
+        input[type="text"] {
+            font-size: 1.8rem !important;
+            padding: 18px 25px !important;
+            border-radius: 50px !important;
+            margin: 15px 0 !important;
+            min-width: 350px !important;
+        }
+        
+        .progress-label {
+            font-size: 1.8rem !important;
+            margin-bottom: 15px !important;
+        }
+        
+        .progress-bar {
+            height: 20px !important;
+            border-radius: 10px !important;
+        }
+        
+        .progress-bar-inner {
+            height: 20px !important;
+        }
+        
+        .footer {
+            font-size: 1.5rem !important;
+            margin-top: 40px !important;
+            padding-top: 30px !important;
+        }
+        
+        .mission-password div {
+            font-size: 4rem !important;
+            margin: 30px 0 !important;
+            padding: 25px !important;
+        }
+        
+        .main-nav {
+            gap: 15px !important;
+            margin-top: 30px !important;
+            margin-bottom: 20px !important;
+        }
+        
+        table.math-table {
+            font-size: 1.8rem !important;
+            margin: 30px 0 !important;
+            width: 100% !important;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+            border-radius: 15px !important;
+            overflow: hidden !important;
+        }
+        
+        table.math-table th {
+            background: rgba(155, 232, 255, 0.2) !important;
+            padding: 20px 15px !important;
+            border: 2px solid rgba(155, 232, 255, 0.3) !important;
+        }
+        
+        table.math-table td {
+            padding: 20px 15px !important;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+        
+        /* Логическая таблица */
+        .logic-table {
+            width: 100%;
+            margin: 25px 0;
+            font-size: 1.8rem;
+            border-collapse: collapse;
+        }
+        
+        .logic-table th {
+            background: rgba(155, 232, 255, 0.2);
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #9be8ff;
+        }
+        
+        .logic-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .mission-section {
+            margin-bottom: 50px !important;
+        }
+        
+        /* Для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
+            h3 { font-size: 1.8rem !important; }
+            p, li { font-size: 1.4rem !important; }
+            .btn { font-size: 1.4rem !important; padding: 15px 25px !important; }
+            .nav-btn { font-size: 1.2rem !important; padding: 12px 20px !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🧠 Миссия 3: Мост Логики</h1>
+           <nav class="main-nav">
+                <a href="index.html" class="nav-btn">Главная</a>
+                <a href="mission1.html" class="nav-btn">Миссия 1</a>
+                <a href="mission2.html" class="nav-btn">Миссия 2</a>
+                <a href="mission3.html" class="nav-btn active">Миссия 3</a>
+                <a href="mission4.html" class="nav-btn">Миссия 4</a>
+                <a href="mission5.html" class="nav-btn">Миссия 5</a>
+                <a href="mission6.html" class="nav-btn">Миссия 6</a>
+                <a href="mission7.html" class="nav-btn ">Миссия 7</a>
+                <a href="mission8.html" class="nav-btn">Миссия 8</a>
+                <a href="mission9.html" class="nav-btn">Миссия 9</a>
+                <a href="mission10.html" class="nav-btn">Миссия 10</a>
+            </nav>
+        </header>
+
+        <main class="card">
+            <div class="mission-icon">🌉</div>
+            
+            <div class="progress-panel task-block" style="border-left-color: #9be8ff;">
+                <h3 class="task-title">Ваш прогресс в городе</h3>
+                <div class="progress-label">
+                    Твой прогресс в «Городе Слов и Чисел»: <strong id="progress-text">2 из 10 миссий</strong>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" id="progress-bar-inner" style="width: 30%;"></div>
+                </div>
+                <p class="hint">Ты прошёл Улицу Слов и Площадь Чисел! Теперь тебя ждёт мост между ними!</p>
+            </div>
+
+            <section class="mission-section">
+                <div class="task-block" style="border-left-color: #9be8ff; background: linear-gradient(135deg, rgba(155, 232, 255, 0.08), rgba(100, 200, 255, 0.05));">
+                    <div class="task-title">
+                        <span>🔐 Вход на Мост Логики</span>
+                    </div>
+                    <p>Введи пароль, полученный в конце Миссии 2.</p>
+                    
+                    <div style="margin: 30px 0; padding: 30px; background: rgba(0,0,0,0.15); border-radius: 25px; text-align: center;">
+                        <input type="text" id="password-input-3" placeholder="Введите пароль с Площади Чисел" 
+                               style="font-size: 2rem; padding: 20px 35px; border-radius: 50px; width: 80%; max-width: 500px; text-align: center; border: 2px solid #9be8ff;">
+                        <br>
+                        <button type="button" class="btn btn-primary" onclick="checkMissionPassword(3, 'ПЛОЩАДЬ')" 
+                                style="margin-top: 25px; font-size: 1.8rem; padding: 18px 40px; background: linear-gradient(90deg, #4df0d6, #2bb8a6);">
+                            🔑 Проверить пароль
+                        </button>
+                    </div>
+                    
+                    <p id="password-message-3" style="text-align: center; font-size: 1.8rem; font-weight: 600; padding: 15px; min-height: 60px;"></p>
+                </div>
+            </section>
+
+            <section class="mission-section" id="mission-content" style="display: none;">
+                <div class="task-block" style="border-left-color: #9be8ff;">
+                    <div class="task-title">
+                        <span>🌉 Легенда моста</span>
+                    </div>
+                    <p>
+                        Мост Логики соединяет Улицу Слов и Площадь Чисел. Он держится на задачах, в которых
+                        нужно и понимать текст, и правильно рассуждать. Если логика нарушится — мост рухнет.
+                        Твоя задача — укрепить мост логическими решениями.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mission-section" id="task1-content" style="display: none;">
+                <h2>Задание 1. Кто где живёт?</h2>
+                <div class="task-block" style="border-left-color: #4df0d6;">
+                    <div class="task-title">
+                        <span>🏠 Логическая задача</span>
+                    </div>
+                    <p>
+                        В одном доме живут трое ребят: Лена, Олег и Ира. Известно, что:
+                    </p>
+                    
+                    <div class="example-list">
+                        <div class="example-item">
+                            📍 Лена живёт не на первом и не на последнем этаже.
+                        </div>
+                        <div class="example-item">
+                            📈 Олег живёт выше Иры.
+                        </div>
+                        <div class="example-item">
+                            🏢 Дом трёхэтажный, на каждом этаже живёт только один из ребят.
+                        </div>
+                    </div>
+                    
+                    <p><strong>Определи, кто на каком этаже живёт.</strong> Оформи решение в виде таблицы или краткой записи.</p>
+                    
+                    <table class="logic-table">
+                        <thead>
+                            <tr>
+                                <th>Этаж</th>
+                                <th>1 этаж</th>
+                                <th>2 этаж</th>
+                                <th>3 этаж</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Житель</strong></td>
+                                <td><input type="text" style="width: 90%; padding: 10px; text-align: center; font-size: 1.6rem; background: transparent; border: 1px dashed #9be8ff; color: white;"></td>
+                                <td><input type="text" style="width: 90%; padding: 10px; text-align: center; font-size: 1.6rem; background: transparent; border: 1px dashed #9be8ff; color: white;"></td>
+                                <td><input type="text" style="width: 90%; padding: 10px; text-align: center; font-size: 1.6rem; background: transparent; border: 1px dashed #9be8ff; color: white;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 30px; padding: 25px; background: rgba(0,0,0,0.15); border-radius: 20px;">
+                        <h4 style="color: #9be8ff; margin-bottom: 15px;">📝 Объясни свой ход рассуждений</h4>
+                        <textarea class="answer-input" rows="5" placeholder="Опиши, как ты пришёл к решению..." 
+                                  style="width: 100%; font-size: 1.8rem; padding: 20px; min-height: 150px;"></textarea>
+                    </div>
+                    
+                    <button type="button" class="btn-inline hint-btn" data-hint-target="m3-hint-1" 
+                            style="background: rgba(77, 240, 214, 0.1); color: #4df0d6; border: 2px solid #4df0d6; padding: 15px 30px; border-radius: 50px; cursor: pointer; margin-top: 25px; font-size: 1.6rem; font-weight: 600;">
+                        💡 Показать подсказку
+                    </button>
+                    <div id="m3-hint-1" class="hint-text" hidden style="margin-top: 25px; padding: 25px; background: rgba(255, 204, 112, 0.1); border-radius: 20px; border-left: 5px solid #ffcc70; font-size: 1.6rem;">
+                        <strong>Подсказка логика:</strong> Если Лена не на первом и не на третьем, значит она на втором этаже.
+                        Олег живёт выше Иры, значит Ира не может быть на третьем. Дальше останется только один вариант.
+                    </div>
+                </div>
+            </section>
+
+            <section class="mission-section" id="task2-content" style="display: none;">
+                <h2>Задание 2. Текст со спрятанными фактами</h2>
+                <div class="task-block" style="border-left-color: #4df0d6;">
+                    <div class="task-title">
+                        <span>📖 Анализ текста</span>
+                    </div>
+                    <p>
+                        Прочитай текст и выпиши не менее трёх фактов и двух выводов.
+                    </p>
+                    
+                    <div style="padding: 25px; background: rgba(0,0,0,0.2); border-radius: 20px; margin: 25px 0; border-left: 5px solid #9be8ff;">
+                        <p style="font-style: italic; line-height: 1.8; font-size: 1.8rem;">
+                            «Каждое утро ученики переходили через Мост Логики, чтобы попасть в школу.
+                            Иногда они спешили и не замечали, какая погода вокруг, а иногда останавливались
+                            и считали, сколько разных деревьев растёт вдоль дороги. Однажды они решили
+                            записать все свои наблюдения и составить таблицу».
+                        </p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                        <div style="padding: 25px; background: rgba(77, 240, 214, 0.08); border-radius: 20px;">
+                            <h4 style="color: #4df0d6; margin-bottom: 15px;">📋 Факты из текста</h4>
+                            <p style="color: #ffcc70; margin-bottom: 10px;"><em>Запиши не менее трёх фактов:</em></p>
+                            <textarea class="answer-input" rows="6" placeholder="1. ...&#10;2. ...&#10;3. ..." 
+                                      style="width: 100%; font-size: 1.8rem; padding: 20px; min-height: 200px;"></textarea>
+                        </div>
+                        
+                        <div style="padding: 25px; background: rgba(255, 204, 112, 0.08); border-radius: 20px;">
+                            <h4 style="color: #ffcc70; margin-bottom: 15px;">🧠 Логические выводы</h4>
+                            <p style="color: #4df0d6; margin-bottom: 10px;"><em>Сделай не менее двух выводов:</em></p>
+                            <textarea class="answer-input" rows="6" placeholder="Вывод 1: ...&#10;Вывод 2: ..." 
+                                      style="width: 100%; font-size: 1.8rem; padding: 20px; min-height: 200px;"></textarea>
+                        </div>
+                    </div>
+                    
+                    <p class="hint" style="text-align: center; background: rgba(155, 232, 255, 0.1); padding: 15px; border-radius: 15px;">
+                        <strong>Напоминание:</strong> Факт — это то, что прямо указано в тексте. 
+                        Вывод — то, что можно логически предположить по тексту.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mission-section" id="test-content" style="display: none;">
+                <h2>Мини-тест по миссии</h2>
+                <div class="task-block" style="border-left-color: #ffcc70;">
+                    <div class="task-title">
+                        <span>🧪 Проверь логическое мышление</span>
+                    </div>
+                    <p>Ответь на вопросы, чтобы подтвердить своё понимание логических принципов.</p>
+
+                    <form class="quiz-form" data-mission="3">
+                        <div class="quiz-question" data-name="m3q1" data-correct="c" 
+                             style="margin: 30px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">
+                                <strong style="font-size: 2.2rem;">1.</strong> На каком этаже живёт Лена?
+                            </p>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q1" value="a" style="margin-right: 20px; transform: scale(1.5);"> 
+                                На первом.
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q1" value="b" style="margin-right: 20px; transform: scale(1.5);"> 
+                                На третьем.
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q1" value="c" style="margin-right: 20px; transform: scale(1.5);"> 
+                                На втором.
+                            </label>
+                        </div>
+
+                        <div class="quiz-question" data-name="m3q2" data-correct="b"
+                             style="margin: 30px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">
+                                <strong style="font-size: 2.2rem;">2.</strong> Что является фактом в тексте про Мост Логики?
+                            </p>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q2" value="a" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Ученики всегда радовались погоде.
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q2" value="b" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Ученики иногда останавливались и считали деревья.
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q2" value="c" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Деревьев было ровно десять.
+                            </label>
+                        </div>
+
+                        <div class="quiz-question" data-name="m3q3" data-correct="a"
+                             style="margin: 30px 0; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 20px;">
+                                <strong style="font-size: 2.2rem;">3.</strong> Что такое вывод?
+                            </p>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q3" value="a" style="margin-right: 20px; transform: scale(1.5);"> 
+                                То, что не написано напрямую, но можно логически предположить.
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q3" value="b" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Случайное предположение.
+                            </label>
+                            <label style="display: block; margin: 15px 0; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; font-size: 1.8rem;">
+                                <input type="radio" name="m3q3" value="c" style="margin-right: 20px; transform: scale(1.5);"> 
+                                Любое слово в тексте.
+                            </label>
+                        </div>
+
+                        <div class="action-buttons" style="margin-top: 40px;">
+                            <button type="button" class="btn btn-primary" onclick="submitMissionTest(3)" style="font-size: 1.8rem; padding: 20px 40px;">
+                                ✅ Проверить ответы
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="window.print()" style="font-size: 1.8rem; padding: 20px 40px;">
+                                🖨️ Распечатать задание
+                            </button>
+                        </div>
+                        
+                        <p id="quiz-result-3" class="quiz-result" 
+                           style="margin-top: 30px; padding: 25px; border-radius: 20px; text-align: center; font-weight: 700; font-size: 2rem; background: rgba(255,255,255,0.05);"></p>
+                    </form>
+
+                    <div class="mission-password" id="mission-password-3" hidden
+                         style="margin-top: 40px; padding: 35px; background: linear-gradient(135deg, rgba(155, 232, 255, 0.1), rgba(100, 200, 255, 0.1)); border-radius: 25px; text-align: center; border: 3px dashed #9be8ff;">
+                        <h3 style="color: #9be8ff; font-size: 2.8rem; margin-bottom: 20px;">🎉 Миссия выполнена!</h3>
+                        <p style="font-size: 2rem; margin: 20px 0;">
+                            Запомни <strong>пароль к следующей миссии</strong>:
+                        </p>
+                        <div style="font-size: 4rem; font-weight: 800; color: #4df0d6; text-shadow: 0 0 15px rgba(77, 240, 214, 0.5); margin: 30px 0; padding: 30px; background: rgba(0,0,0,0.2); border-radius: 25px; letter-spacing: 8px;">
+                            ПАРК
+                        </div>
+                        <p style="font-size: 1.6rem; opacity: 0.9;">
+                            Он понадобится тебе, чтобы пройти дальше по Городу Слов и Чисел.
+                        </p>
+                    </div>
+
+                    <div class="mission-nav-next" style="margin-top: 50px; text-align: center;">
+                        <a href="mission4.html" class="btn btn-secondary" style="font-size: 1.8rem; padding: 20px 40px; background: rgba(255, 204, 112, 0.15); border-color: #ffcc70;">
+                            🚀 Перейти к Миссии 4
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Город Слов и Чисел • Миссия 3: Мост Логики</p>
+            <p style="opacity: 0.7; margin-top: 15px; font-size: 1.5rem;">Версия 1.0 • © 2024</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Скрипт для проверки пароля
+        function checkMissionPassword(missionNumber, correctPassword) {
+            const input = document.getElementById(`password-input-${missionNumber}`);
+            const message = document.getElementById(`password-message-${missionNumber}`);
+            
+            if (input.value.trim().toUpperCase() === correctPassword) {
+                message.innerHTML = '✅ Пароль верный! Добро пожаловать на Мост Логики!';
+                message.style.color = '#4df0d6';
+                
+                // Показать все скрытые секции миссии
+                document.querySelectorAll('[id$="content"]').forEach(section => {
+                    section.style.display = 'block';
+                });
+                
+                // Плавное появление контента
+                document.querySelectorAll('[id$="content"]').forEach((section, index) => {
+                    section.style.opacity = '0';
+                    section.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        section.style.opacity = '1';
+                    }, 100 * index);
+                });
+            } else {
+                message.innerHTML = '❌ Неверный пароль. Попробуй ещё раз!';
+                message.style.color = '#ff6b6b';
+            }
+        }
+    </script>
+</body>
+</html>
